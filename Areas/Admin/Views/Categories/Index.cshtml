@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WebData.Models.Category>
+
+@{
+    ViewData["Title"] = "Trang quản lý thể loại tin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Categories" asp-action="Index">Quản Lý Loại Tin</a></li>
+    </ol>
+    <h6 class="slim-pagetitle">QUẢN LÝ LOẠI TIN</h6>
+</div><!-- slim-pageheader -->
+<a asp-action="Create" class="btn btn-primary">Thêm mới</a>
+<div class="section-wrapper">
+    <div class="table-responsive">
+        <table class="table mg-b-0">
+            <thead>
+                <tr>
+                    <th>
+                        TT
+                    </th>
+                    <th>
+                        Loại Tin
+                    </th>
+
+                    <th>
+                        Mô Tả
+                    <th>
+                        #
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(Model => item.CatId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CatName)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.CatId" class="btn btn-primary">Sửa</a>
+                                <a asp-action="Delete" asp-route-id="@item.CatId" class="btn btn-danger">Xoá</a>
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div><!-- table-responsive -->
+</div><!-- section-wrapper -->

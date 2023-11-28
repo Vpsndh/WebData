@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebData.Models.Role>
+
+@{
+    ViewData["Title"] = "Quản lý quyền truy cập";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-area="Roles" asp-controller="Home" asp-action="Index">Quản Lý Quyền Truy Cập</a></li>
+    </ol>
+    <h6 class="slim-pagetitle">QUẢN LÝ QUYỀN TRUY CẬP</h6>
+</div><!-- slim-pageheader -->
+
+<div class="section-wrapper">
+    <div class="table-responsive">
+        <table class="table mg-b-0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>MÔ TẢ</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.RolesId</th>
+                            <td>@item.RolesName</td>
+                            <td>@item.RolesDes</td>
+                            <td>
+                                <a asp-area="Admin" asp-controller="Roles" asp-action="Edit" asp-route-id="@item.RolesId" class="btn btn-primary">Sửa</a>
+                                <a asp-area="Admin" asp-controller="Roles" asp-action="Delete" asp-route-id="@item.RolesId" class="btn btn-danger">Xoá</a>
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div><!-- table-responsive -->
+</div><!-- section-wrapper -->

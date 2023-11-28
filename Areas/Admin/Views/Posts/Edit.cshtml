@@ -1,0 +1,92 @@
+﻿@model WebData.Models.Post
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdminLogin.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PostId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alias" class="control-label"></label>
+                <input asp-for="Alias" class="form-control" />
+                <span asp-validation-for="Alias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contents" class="control-label"></label>
+                <input asp-for="Contents" class="form-control" />
+                <span asp-validation-for="Contents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NhanXet" class="control-label"></label>
+                <input asp-for="NhanXet" class="form-control" />
+                <span asp-validation-for="NhanXet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoBct" class="control-label"></label>
+                <input asp-for="SoBct" class="form-control" />
+                <span asp-validation-for="SoBct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NguonBct" class="control-label"></label>
+                <input asp-for="NguonBct" class="form-control" />
+                <span asp-validation-for="NguonBct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountId" class="control-label"></label>
+                <select asp-for="AccountId" class="form-control" asp-items="ViewBag.AccountId"></select>
+                <span asp-validation-for="AccountId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatId" class="control-label"></label>
+                <select asp-for="CatId" class="form-control" asp-items="ViewBag.CatId"></select>
+                <span asp-validation-for="CatId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAt" class="control-label"></label>
+                <input asp-for="CreateAt" class="form-control" />
+                <span asp-validation-for="CreateAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DanhGia" class="control-label"></label>
+                <input asp-for="DanhGia" class="form-control" />
+                <span asp-validation-for="DanhGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Keys" class="control-label"></label>
+                <input asp-for="Keys" class="form-control" />
+                <span asp-validation-for="Keys" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TtthuTin" class="control-label"></label>
+                <input asp-for="TtthuTin" class="form-control" />
+                <span asp-validation-for="TtthuTin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

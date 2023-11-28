@@ -1,0 +1,41 @@
+﻿@model WebData.Models.Category
+
+@{
+    ViewData["Title"] = "Thêm mới loại tin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Categories" asp-action="Index">Quản Lý Thể loại Tin</a></li>
+        <li class="breadcrumb-item">Tạo Mới</li>
+    </ol>
+    <h6 class="slim-pagetitle">QUẢN LÝ THỂ LOẠI TIN</h6>
+</div><!-- slim-pageheader -->
+
+<div class="section-wrapper">
+    <form asp-area="Admin" asp-controller="Categories" asp-action="Create" method="post">
+        <div class="form-layout">
+            <div class="row mg-b-25">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Tên Loại Tin: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" asp-for="CatName">
+                    </div>
+                </div><!-- col-4 -->
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label class="form-control-label">Mô Tả: <span class="tx-danger">*</span></label>
+                        <input class="form-control" type="text" asp-for="Title" />
+                    </div>
+                </div><!-- col-4 -->
+            </div>
+
+            <div class="form-layout-footer">
+                <button class="btn btn-primary bd-0">Xác nhận</button>
+                <button class="btn btn-secondary bd-0">Huỷ</button>
+            </div><!-- form-layout-footer -->
+        </div><!-- form-layout -->
+    </form>
+</div><!-- section-wrapper -->
