@@ -27,9 +27,6 @@ namespace WebData.Areas.Admin.Controllers
         public IActionResult Index(int? page, int CatId=0)
         {
             var pageNumber =page ==null ||  page <= 0 ? 1 : page.Value;
-<<<<<<< HEAD
-            var pageSize = 10;
-=======
             var pageSize = 20;
 >>>>>>> bbc5af107dc09cf60dea3ddd2c2a7fc2d416481c
             List<Post> lsPosts = new List<Post>();
