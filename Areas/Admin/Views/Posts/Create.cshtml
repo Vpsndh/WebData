@@ -1,9 +1,10 @@
 ﻿@model WebData.Models.Post
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo mới bài viết";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+
 
 <form asp-area="Admin" asp-controller="Posts" asp-action="Create" method="post">
     <div class="row">
@@ -118,7 +119,4 @@
     </div>
 </form>
 
-@section Script{
-    <script src="/AdminCss/vendor/ckeditor/ckeditor.js"></script>
-}
 

@@ -6,66 +6,93 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<div class="slim-pageheader">
-    <ol class="breadcrumb slim-breadcrumb">
-        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
-        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Posts" asp-action="Index">Quản Lý Tin Đăng</a></li>
-    </ol>
-    <h6 class="slim-pagetitle">QUẢN LÝ TIN Đăng</h6>
-</div><!-- slim-pageheader -->
-<a asp-action="Create" class="btn btn-primary">Thêm mới</a>
-<div class="section-wrapper">
-    <div class="table-responsive">
-        <table class="table mg-b-0">
-            <thead>
-                <tr>
-                    <th>Số BCT</th>
-                    <th>NỘI DUNG</th>
-                    <th>NGÀY TẠO</th>
-                    <th>NGUỒN</th>
-                    <th>NGƯỜI SOẠN THẢO</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null && Model.Count() > 0)
-                {
-                    foreach (var item in Model)
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Trang chủ</a>
+            <a class="breadcrumb-item" href="#">Quản Lý Tin</a>
+        </nav>
+    </div></div>
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-8">
+                <div class="d-md-flex">
+                    <div class="m-b-10 m-r-15">
+                        <select class="custom-select" style="min-width: 200px" asp-items="@ViewBag.DanhMuc"></select>                        
+                    </div>
+                    <div class="m-b-10">
+                        <select class="custom-select" style="min-width: 180px;">
+                            <option selected>Status</option>
+                            <option value="all">All</option>
+                            <option value="inStock">In Stock </option>
+                            <option value="outOfStock">Out of Stock</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-right">
+                    <a asp-action="Create" class="btn btn-primary"><i class="anticon anticon-plus-circle m-r-5"></i>Tạo mới</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>Số</th>
+                        <th>NỘI DUNG</th>
+                        <th>NGÀY TẠO</th>
+                        <th>NGUỒN</th>
+                        <th>NGƯỜI SOẠN</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.SoBct)
-                            </td>
+                        foreach (var item in Model)
+                        {
+                            string url = $"/{item.Alias}.html";
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SoBct)
+                                </td>
 
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Title)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(Model => item.CreateAt)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NguonBct)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Author)
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.PostId" class="btn btn-primary">Sửa</a>
-                                <a asp-action="Delete" asp-route-id="@item.PostId" class="btn btn-danger">Xoá</a>
-                            </td>
-                        </tr>
+                                <td>
+                                 <a href="@url">@item.Title</a>
+                                </td>
+                                <td>
+                                    @item.CreateAt.Value.ToString("dd/MM/yyyy")
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NguonBct)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Author)
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.PostId" class="btn btn-primary">Sửa</a>
+                                    <a asp-action="Delete" asp-route-id="@item.PostId" class="btn btn-danger">Xoá</a>
+                                </td>
+                            </tr>
+                        }
                     }
-                }
 
-            </tbody>
-        </table>
+                </tbody>
 
-    </div><!-- table-responsive -->
-    <div aria-label="Page navigation example">
+            </table>
+        </div>
+    </div>
+    <div aria-label="class=" dataTables_paginate paging_simple_numbers">
         <ui class="pagination">
-            <pager class="page-container" options="@PagedListRenderOptions.Bootstrap4PageNumbersOnly" list="@Model" asp-area="Admin" asp-controller="Posts" asp-route-CatId="@ViewBag.CurrentCat" asp-action="Index"/>
+            <pager class="page-container" options="@PagedListRenderOptions.Bootstrap4PageNumbersOnly" list="@Model" asp-area="Admin" asp-controller="Posts" asp-route-CatId="@ViewBag.CurrentCat" asp-action="Index" />
         </ui>
     </div>
-</div><!-- section-wrapper -->
+
+</div>
+
+
+
+

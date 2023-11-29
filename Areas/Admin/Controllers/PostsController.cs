@@ -27,11 +27,7 @@ namespace WebData.Areas.Admin.Controllers
         public IActionResult Index(int? page, int CatId=0)
         {
             var pageNumber =page ==null ||  page <= 0 ? 1 : page.Value;
-<<<<<<< HEAD
-            var pageSize = 10;
-=======
             var pageSize = 20;
->>>>>>> bbc5af107dc09cf60dea3ddd2c2a7fc2d416481c
             List<Post> lsPosts = new List<Post>();
             if (CatId != 0)
             {
@@ -50,11 +46,13 @@ namespace WebData.Areas.Admin.Controllers
             PagedList<Post> models = new PagedList<Post>(lsPosts.AsQueryable(), pageNumber, pageSize);
             ViewBag.CurrentsPage = pageNumber;
             ViewBag.CurrentsCat = CatId;
+            ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
             return View(models);
         }
 
         // GET: Admin/Posts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [Route("/{Alias}.html", Name = "PostDetails")]
+        public async Task<IActionResult> PostDetails(int? id)
         {
             if (id == null || _context.Posts == null)
             {
@@ -74,10 +72,9 @@ namespace WebData.Areas.Admin.Controllers
         }
 
         // GET: Admin/Posts/Create
+        [Route("tao-bai-viet.html", Name = "Create")]
         public IActionResult Create()
         {
-         
-            
             ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
             return View();
         }

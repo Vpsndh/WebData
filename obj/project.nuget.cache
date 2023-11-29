@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e7q+7IVXo7Wn8BJRIxCInVEaiH2t2bXR6X/kwN2NmCjzb/ZKDE0/dJgmQMag1lO412W0z7lB4ekP2Xe+6xQIAw==",
+  "dgSpecHash": "AiDrwpnUbIRcP6+X10SpNw4dCuefHsZMJqtZ786jIX1UHBFHwAHlwtz8VI8X+JYrzU68Mz9Ud5c+7l93tcalfg==",
   "success": true,
-  "projectFilePath": "D:\\CodeMVC_7\\WebData\\FinalXtb\\WebData\\WebData.csproj",
+  "projectFilePath": "D:\\GIT\\WebData\\WebData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Valkyra\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Valkyra\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

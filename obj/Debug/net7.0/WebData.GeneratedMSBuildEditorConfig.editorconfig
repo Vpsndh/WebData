@@ -9,149 +9,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebData
 build_property.RootNamespace = WebData
-build_property.ProjectDir = D:\CodeMVC_7\WebData\FinalXtb\WebData\
+build_property.ProjectDir = D:\GIT\WebData\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\CodeMVC_7\WebData\FinalXtb\WebData
+build_property.MSBuildProjectDirectory = D:\GIT\WebData
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Accounts/Create.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Accounts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Accounts/Delete.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Accounts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Accounts/Details.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Accounts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Accounts/Edit.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Accounts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Accounts/Index.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Accounts/Login.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Accounts/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Categories/Create.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Categories/Delete.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Categories/Details.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Categories/Edit.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Categories/Index.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Home/Index.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Posts/Create.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Posts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Posts/Delete.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Posts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Posts/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Posts/Edit.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Posts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Posts/Index.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Posts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Roles/Create.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Posts/PostDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdHNcUG9zdERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GIT/WebData/Areas/Admin/Views/Roles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Roles/Delete.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Roles/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Roles/Details.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Roles/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Roles/Edit.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Roles/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Roles/Index.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Roles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Shared/Error.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Shared/_LayoutAdminLogin.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Shared/_LayoutAdminLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbkxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Views/Home/Index.cshtml]
+[D:/GIT/WebData/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Views/Home/Privacy.cshtml]
+[D:/GIT/WebData/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Views/Shared/Error.cshtml]
+[D:/GIT/WebData/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/GIT/WebData/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Views/_ViewImports.cshtml]
+[D:/GIT/WebData/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Views/_ViewStart.cshtml]
+[D:/GIT/WebData/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+[D:/GIT/WebData/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-jwcyu0adm9
 
-[D:/CodeMVC_7/WebData/FinalXtb/WebData/Views/Shared/_Layout.cshtml]
+[D:/GIT/WebData/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-di0at2mglp

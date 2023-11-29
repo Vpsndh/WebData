@@ -1,0 +1,183 @@
+﻿@model WebData.Models.Post
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Trang chủ</a>
+            <a class="breadcrumb-item" href="#">Quản lý Tin</a>
+        </nav>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5>TIÊU ĐỀ</h5>
+                    <hr>
+                    <span>
+                        @Html.DisplayFor(model => model.Title)
+                    </span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5>NỘI DUNG</h5>
+                    <hr>
+                    <textarea class="form-control" style="height: 450px">
+                                                @Html.DisplayFor(model => model.Contents)
+                                            </textarea>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5>NHẬN XÉT, ĐÁNH GIÁ</h5>
+                    <hr>
+                    <p>
+                        @Html.DisplayFor(model => model.NhanXet)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">THÔNG TIN CHUNG</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="timeline timeline-sm">
+                        <li class="timeline-item">
+                            <div class="timeline-item-head">
+                                <div class="avatar avatar-icon avatar-sm avatar-cyan">
+                                    <i class="anticon anticon-check"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <div class="m-l-10">
+                                    <div class="media align-items-center">
+                                        <div class="m-l-10">
+                                            <h6 class="m-b-0">SỐ BCT</h6>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-20">
+                                        <p class="m-l-20">
+                                            <span>
+                                                @Html.DisplayFor(model => model.SoBct)
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-item-head">
+                                <div class="avatar avatar-icon avatar-sm avatar-cyan">
+                                    <i class="anticon anticon-check"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <div class="m-l-10">
+                                    <div class="media align-items-center">
+                                        <div class="m-l-10">
+                                            <h6 class="m-b-0">NGUỒN</h6>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-20">
+                                        <p class="m-l-20">
+                                            <span>
+                                                @Html.DisplayFor(model => model.NguonBct)
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-item-head">
+                                <div class="avatar avatar-icon avatar-sm avatar-cyan">
+                                    <i class="anticon anticon-check"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <div class="m-l-10">
+                                    <div class="media align-items-center">
+                                        <div class="m-l-10">
+                                            <h6 class="m-b-0">THỜI GIAN LÀM BÁO CÁO</h6>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-20">
+                                        <p class="m-l-20">
+                                            <span>
+                                                @Html.DisplayFor(model => model.CreateAt)
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-item-head">
+                                <div class="avatar avatar-icon avatar-sm avatar-cyan">
+                                    <i class="anticon anticon-check"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <div class="m-l-10">
+                                    <div class="media align-items-center">
+                                        <div class="m-l-10">
+                                            <h6 class="m-b-0">TRƯỜNG HỢP THU TIN</h6>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-20">
+                                        <p class="m-l-20">
+                                            <span>
+                                                @Html.DisplayFor(model => model.TtthuTin)
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-item-head">
+                                <div class="avatar avatar-icon avatar-sm avatar-cyan">
+                                    <i class="anticon anticon-check"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <div class="m-l-10">
+                                    <div class="media align-items-center">
+                                        <div class="m-l-10">
+                                            <h6 class="m-b-0">NGƯỜI LÀM BÁO CÁO</h6>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-20">
+                                        <p class="m-l-20">
+                                            <span>
+                                                @Html.DisplayFor(model => model.Author)
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <a asp-action="Edit" asp-route-id="@Model.PostId">Sửa</a> |
+                    <a asp-action="Delete">Xóa</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
