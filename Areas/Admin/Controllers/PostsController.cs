@@ -51,10 +51,10 @@ namespace WebData.Areas.Admin.Controllers
         }
 
         // GET: Admin/Posts/Details/5
-        [Route("/{Alias}.html", Name = "PostDetails")]
-        public async Task<IActionResult> PostDetails(int? id)
+        [Route("{Alias}.html", Name ="PostDetails")]
+        public async Task<IActionResult> PostDetails(string Alias)
         {
-            if (id == null || _context.Posts == null)
+            if (string.IsNullOrEmpty(Alias))
             {
                 return NotFound();
             }
@@ -62,7 +62,7 @@ namespace WebData.Areas.Admin.Controllers
             var post = await _context.Posts
                 .Include(p => p.Account)
                 .Include(p => p.Cat)
-                .FirstOrDefaultAsync(m => m.PostId == id);
+                .FirstOrDefaultAsync(m => m.Alias == Alias);
             if (post == null)
             {
                 return NotFound();
