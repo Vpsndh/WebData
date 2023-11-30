@@ -4,119 +4,141 @@
     ViewData["Title"] = "Tạo mới bài viết";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+@section Styles{
+    <link href="/assets/summer/summernote-bs4.css" rel="stylesheet"/>
+    <link href="/assets/summer/summernote.css" rel="stylesheet" />
 
-
+}
 <form asp-area="Admin" asp-controller="Posts" asp-action="Create" method="post">
-    <div class="row">
-        <div class="col-xl-4">
-            <div class="row">
-                <div class="card">
-                    <div class="col-xl-12">
 
-                        <div class="card-header">
-                            <h4 class="card-title">Danh Mục tin:</h4>
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Trang chủ</a>
+            <a class="breadcrumb-item" href="#">Quản lý tin</a>
+            <span class="breadcrumb-item active">Tạo Mới</span>
+        </nav>
+    </div>
+</div>
+
+    <div class="page-header no-gutters has-tab">
+        <div class="d-md-flex m-b-15 align-items-center justify-content-between">
+            <div class="media align-items-center m-b-15">
+                <div class="m-l-15">
+                </div>
+            </div>
+            <div class="m-b-15">
+                <button class="btn btn-primary">
+                    <i class="anticon anticon-save"></i>
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#product-edit-basic">Thông TIn Cơ Bản</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#product-edit-contents">Nội Dung</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#product-edit-description">Nhận Xét - Đánh Giá</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#product-edit-attachments">Đính Kèm File</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content m-t-15">
+        <div class="tab-pane fade show active" id="product-edit-basic">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold">Tiêu Đề</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold">Danh Mục Tin</label>
+                            <select asp-for="CatId" class="custom-select" style="min-width:200px" asp-items="@ViewBag.DanhMuc">
+                                <option value="" disabled selected>Chọn danh mục tin</option>
+                            </select>
                         </div>
-                        <div class="card-body">
-                            <select asp-for="CatId" class="default-select form-control wide" asp-items="@ViewBag.DanhMuc"></select>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold">Trường Hợp Thu Tin</label>
+                            <input type="text" class="form-control" asp-for="TtthuTin" />
                         </div>
 
                     </div>
-                    <div class="col-xl-12">
-
-                        <div class="card-header">
-                            <h4 class="card-title">Số Báo Cáo Tin:</h4>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label class="font-weight-semibold">Số Báo Cáo</label>
+                            <input type="text" class="form-control" asp-for="SoBct">
                         </div>
-                        <div class="card-body">
-                            <input type="text" class="form-control input-default " asp-for="SoBct">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold">Ngày Soạn Thảo</label>
+                            <input type="date" class="form-control" asp-for="CreateAt">
                         </div>
-
                     </div>
-                    <div class="col-xl-12">
-
-                        <div class="card-header">
-                            <h4 class="card-title">Ngày Soạn Thảo:</h4>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold">Nguồn</label>
+                            <input type="text" class="form-control" asp-for="NguonBct" />
                         </div>
-                        <div class="card-body">
-                            <input type="date" class="form-control input-default " asp-for="CreateAt">
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-semibold">Từ Khóa</label>
+                            <input type="text" class="form-control" asp-for="Keys" />
                         </div>
-
-                    </div>
-
-                    <div class="col-xl-12">
-
-                        <div class="card-header">
-                            <h4 class="card-title">Trường Hợp Thu Tin:</h4>
-                        </div>
-                        <div class="card-body">
-                            <input type="text" class="form-control input-default " asp-for="TtthuTin">
-                        </div>
-
-                    </div>
-                    <div class="col-xl-12">
-
-                        <div class="card-header">
-                            <h4 class="card-title">Nguồn:</h4>
-                        </div>
-                        <div class="card-body">
-                            <input type="text" class="form-control input-default " asp-for="NguonBct">
-                        </div>
-
-                    </div>
-                    <div class="col-xl-12">
-
-                        <div class="card-header">
-                            <h4 class="card-title">Từ Khóa:</h4>
-                        </div>
-                        <div class="card-body">
-                            <input type="text" class="form-control input-default " asp-for="Keys" />
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-8">
+        <div class="tab-pane fade" id="product-edit-contents">
             <div class="card">
-                <div class="col-xl-12">
-
-                    <div class="card-header">
-                        <h4 class="card-title">Tiêu Đề:</h4>
-                    </div>
-                    <div class="card-body">
-                        <input type="text" class="form-control input-default" asp-for="Title" />
-                    </div>
-
-                </div>
-                <div class="col-xl-12">
-
-                    <div class="card-header">
-                        <h4 class="card-title">Nội Dung:</h4>
-                    </div>
-                    <div class="card-body">
-                        <textarea class="form-control" style="height: 382px" asp-for="Contents"></textarea>
-                    </div>
-                <div class="col-xl-12">
-
-                    <div class="card-header">
-                        <h4 class="card-title">Nhận Xét:</h4>
-                    </div>
-                    <div class="card-body">
-                            <textarea class="form-control" style="height: 170px" asp-for="NhanXet"></textarea>
-                        </div>
-
-                </div>
-                <div class="col-lg-12">
-                    <div class="mb-3">
-                        <div style="text-align:center !important" class="form-layout-footer">
-                            <button class="btn btn-primary bd-0">Đăng bài</button>
-                        </div>
-
-                    </div>
+                <div class="card-body">
+                    <textarea asp-for="Contents"></textarea>
                 </div>
             </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-description">
+            <div class="card">
+                <div class="card-body">
+                    <textarea asp-for="NhanXet"></textarea>
+                </div>
             </div>
         </div>
     </div>
 </form>
+@section Scripts{
+    <script src="/assets/summer/summernote.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#Contents').summernote({
+                fontNames: ['Arial', 'Arial Black', 'Comic San MS', 'Time New Roman'],
+                styleTags: ['P', 'h1', 'h2', 'h3', 'h4', 'h5'],
+                height: 400,
+                minHeight: null,
+                maxHeight: null,
+                focus: true
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#NhanXet').summernote({
+                fontNames: ['Arial', 'Arial Black', 'Comic San MS', 'Time New Roman'],
+                styleTags: ['P', 'h1', 'h2', 'h3', 'h4', 'h5'],
+                height: 400,
+                minHeight: null,
+                maxHeight: null,
+                focus: true
+            });
+        });
+    </script>
+
+
+}
+
 
 

@@ -72,7 +72,6 @@ namespace WebData.Areas.Admin.Controllers
         }
 
         // GET: Admin/Posts/Create
-        [Route("tao-bai-viet.html", Name = "Create")]
         public IActionResult Create()
         {
             ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
