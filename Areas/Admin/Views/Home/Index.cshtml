@@ -1,8 +1,123 @@
 ﻿
+
+
+@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<WebData.Models.Post>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Hệ thống quản lý tin đăng";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-8">
+                <div class="d-md-flex">
+                    <div class="m-b-10 m-r-15">
+                        <select class="custom-select" id="CatId" name="CatId" style="min-width: 200px" asp-items="@ViewBag.DanhMuc"></select>
+                    </div>
+                    <div class="m-b-10">
+                        <select class="custom-select" style="min-width: 180px;">
+                            <option selected>Status</option>
+                            <option value="all">All</option>
+                            <option value="inStock">In Stock </option>
+                            <option value="outOfStock">Out of Stock</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-right">
+                <a  asp-area="Admin" asp-controller="Posts" asp-action="Create" class="btn btn-primary"><i class="anticon anticon-plus-circle m-r-5"></i>Tạo mới</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>NGÀY TẠO</th>
+                        <th>Số</th>
+                        <th>NỘI DUNG</th>
+                        <th>Danh Mục</th>
+                        <th>NGUỒN</th>
+                        <th>NGƯỜI SOẠN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            string url = $"/{item.Alias}.html";
+                            <tr>
+                                <td>
+                                    @item.CreateAt.Value.ToString("dd/MM/yyyy")
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SoBct)
+                                </td>
+
+                                <td>
+                                    <a href="@url">@item.Title</a>
+                                </td>
+                                <td>@item.Cat.CatName</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NguonBct)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Author)
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div aria-label="class=" dataTables_paginate paging_simple_numbers">
+        <ui class="pagination">
+            <pager class="page-container" options="@PagedListRenderOptions.Bootstrap4PageNumbersOnly" list="@Model" asp-area="Admin" asp-controller="Home" asp-route-CatId="@ViewBag.CurrentCat" asp-action="Index" />
+        </ui>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            jQuery("#txtCatId").change(function () {
+                var CatId = jQuery(this).children(":selected").attr("value");
+                CatId = parseFloat(catId);
+                $('#textCatId option')
+                    .removeAttr('selected');
+                $("#txtCatId > [value=" + CatId + "]").attr("selected", "true");
+
+                $.ajax({
+                    url: '/Admin/Filtter',
+                    datatype: "json",
+                    type: "GET",
+                    data: { 
+                        CatId: CatId 
+                    },
+                    async: true,
+                    success: function (results) {
+                        if (results.status == "success") {
+                            window.location.href = results.redirectUrl;
+                        }
+
+                    },
+                    Error: function (xhr) {
+                        alert('error');
+                    }
+                });
+            });
+        })      
+    </script>
+}
+
 

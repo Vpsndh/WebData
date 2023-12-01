@@ -48,7 +48,6 @@ namespace WebData.Controllers
                         ViewBag.Error = "Thông tin đăng nhập không chính xác";
                         return View();
                     }
-                    string Accid = "";
                     string Accidstr = kh.AccountId.ToString();
                     HttpContext.Session.SetString("Accid", Accidstr);
                     var taikhoanID = HttpContext.Session.GetString("Accid");
@@ -57,7 +56,8 @@ namespace WebData.Controllers
                         new Claim(ClaimTypes.Name, kh.FullName),
                         new Claim(ClaimTypes.Role, kh.Roles.RolesName),
                         new Claim("AccountID", kh.AccountId.ToString()),
-                        new Claim("RoleID", kh.RolesId.ToString())
+                        new 
+                        Claim("RoleID", kh.RolesId.ToString())
                     };
                     var grandmaIdentity = new ClaimsIdentity(userclaims, "User Identity");
                     var userPrincipal = new ClaimsPrincipal(new[] { grandmaIdentity });

@@ -27,7 +27,7 @@ public partial class XtbDbContext : DbContext
     public virtual DbSet<Role> Roles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=BOSS\\MAYCHU; Database=XtbDB;Trusted_Connection=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=BOSS\\BOSS; Database=XtbDB;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -110,5 +110,4 @@ public partial class XtbDbContext : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-    public DbSet<WebData.Areas.Admin.Models.LoginViewModel> LoginViewModel { get; set; } = default!;
 }

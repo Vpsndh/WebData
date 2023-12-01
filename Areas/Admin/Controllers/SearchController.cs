@@ -2,59 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using PagedList.Core;
-using WebData.Helper;
 using WebData.Models;
 
 namespace WebData.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize()]
-    public class PostsController : Controller
+    public class SearchController : Controller
     {
         private readonly XtbDbContext _context;
 
-        public PostsController(XtbDbContext context)
+        public SearchController(XtbDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/Posts
-        public IActionResult Index(int? page, int CatId=0)
+        // GET: Admin/Search
+        public async Task<IActionResult> Index()
         {
-            var pageNumber =page ==null ||  page <= 0 ? 1 : page.Value;
-            var pageSize = 5;
-            List<Post> lsPosts = new List<Post>();
-            if (CatId != 0)
-            {
-                lsPosts = _context.Posts
-                    .AsNoTracking().Where(x => x.CatId == CatId)
-                    .Include(x => x.Cat)
-                    .OrderByDescending(x => x.PostId).ToList();
-            }
-            else
-            {
-                lsPosts = _context.Posts
-                    .AsNoTracking()
-                    .Include(x => x.Cat)
-                    .OrderByDescending(x => x.PostId).ToList();
-            }
-            PagedList<Post> models = new PagedList<Post>(lsPosts.AsQueryable(), pageNumber, pageSize);
-            ViewBag.CurrentsPage = pageNumber;
-            ViewBag.CurrentsCat = CatId;
-            ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
-            return View(models);
+            var xtbDbContext = _context.Posts.Include(p => p.Account).Include(p => p.Cat);
+            return View(await xtbDbContext.ToListAsync());
         }
 
-        // GET: Admin/Posts/Details/5
-        [Route("{Alias}.html", Name ="PostDetails")]
-        public async Task<IActionResult> PostDetails(string Alias)
+        // GET: Admin/Search/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            if (string.IsNullOrEmpty(Alias))
+            if (id == null || _context.Posts == null)
             {
                 return NotFound();
             }
@@ -62,7 +37,7 @@ namespace WebData.Areas.Admin.Controllers
             var post = await _context.Posts
                 .Include(p => p.Account)
                 .Include(p => p.Cat)
-                .FirstOrDefaultAsync(m => m.Alias == Alias);
+                .FirstOrDefaultAsync(m => m.PostId == id);
             if (post == null)
             {
                 return NotFound();
@@ -71,39 +46,33 @@ namespace WebData.Areas.Admin.Controllers
             return View(post);
         }
 
-        // GET: Admin/Posts/Create
+        // GET: Admin/Search/Create
         public IActionResult Create()
         {
-            ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
+            ViewData["AccountId"] = new SelectList(_context.Accounts, "AccountId", "AccountId");
+            ViewData["CatId"] = new SelectList(_context.Categories, "CatId", "CatId");
             return View();
         }
 
-        // POST: Admin/Posts/Create
+        // POST: Admin/Search/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PostId,Title,Alias,Contents,NhanXet,SoBct,NguonBct,AccountId,Author,CatId,CreateAt,DanhGia,Keys,TtthuTin")] Post post)
         {
-            
-
-            var taikhoanID = HttpContext.Session.GetString("Accid");
-            var account = _context.Accounts.AsNoTracking().FirstOrDefault(p => p.AccountId == int.Parse(taikhoanID));
-            if (account == null) return NotFound();
             if (ModelState.IsValid)
             {
-                post.Alias = Utilities.SEOUrl(post.Title);
-                post.AccountId = account.AccountId;
-                post.Author = account.FullName;
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName", post.CatId);
+            ViewData["AccountId"] = new SelectList(_context.Accounts, "AccountId", "AccountId", post.AccountId);
+            ViewData["CatId"] = new SelectList(_context.Categories, "CatId", "CatId", post.CatId);
             return View(post);
         }
 
-        // GET: Admin/Posts/Edit/5
+        // GET: Admin/Search/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Posts == null)
@@ -121,7 +90,7 @@ namespace WebData.Areas.Admin.Controllers
             return View(post);
         }
 
-        // POST: Admin/Posts/Edit/5
+        // POST: Admin/Search/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -158,7 +127,7 @@ namespace WebData.Areas.Admin.Controllers
             return View(post);
         }
 
-        // GET: Admin/Posts/Delete/5
+        // GET: Admin/Search/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Posts == null)
@@ -178,7 +147,7 @@ namespace WebData.Areas.Admin.Controllers
             return View(post);
         }
 
-        // POST: Admin/Posts/Delete/5
+        // POST: Admin/Search/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
